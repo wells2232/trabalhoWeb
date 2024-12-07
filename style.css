@@ -1,0 +1,70 @@
+body {
+  background-color: #274060;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 18px;
+  border-bottom: solid aliceblue 1px;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  background-color: #326273;
+}
+
+a {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 5px;
+}
+
+a:hover {
+  background-color: bisque;
+  border-radius: 5px;
+  color: black;
+}
+
+p {
+  text-align: justify;
+}
+
+main {
+  max-width: 100%;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 660px;
+  margin: 0 auto;
+}
+
+.items-formacao {
+  display: flex;
+  gap: 32px;
+}
+
+.contato-card {
+  background-color: #335c81;
+
+  padding: 20px;
+
+  border: solid white 2px;
+
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
