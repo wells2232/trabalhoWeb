@@ -1,24 +1,38 @@
+:root {
+  --primary: #032f30;
+  --secondary: #0a7075;
+}
+
+html {
+  height: 100%;
+}
+
 body {
-  background-color: #274060;
-  margin: 0px;
-  padding: 0px;
+  background: url("/images/gradient_2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  font-family: gotham, arial, helvetica, sans-serif;
+  font-size: 18px;
+  padding: 0;
+  margin: 0 auto !important;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   gap: 20px;
-  padding: 18px;
-  border-bottom: solid aliceblue 1px;
+  padding: 20px;
 }
 
-li {
+.nav-button {
   list-style: none;
-}
-
-nav {
-  background-color: #326273;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 a {
@@ -28,33 +42,45 @@ a {
 }
 
 a:hover {
-  background-color: bisque;
-  border-radius: 5px;
-  color: black;
+  border-bottom: solid white 4px;
 }
 
 p {
   text-align: justify;
 }
 
-main {
-  max-width: 100%;
-  color: whitesmoke;
+.formacao {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 660px;
-  margin: 0 auto;
+  gap: 14px;
 }
 
 .items-formacao {
   display: flex;
+  justify-content: center;
+
+  align-items: center;
   gap: 32px;
+  text-align: justify;
+}
+
+.item-formacao {
+  list-style: none;
+  width: 500px
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  text-align: justify;
+  border: solid white 2px;
+  border-radius: 5px;
+  
 }
 
 .contato-card {
-  background-color: #335c81;
+  background-color: var(--secondary);
 
   padding: 20px;
 
@@ -67,4 +93,25 @@ form {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
 }
