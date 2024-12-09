@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll("nav a");
   const mainContent = document.querySelector("main");
+  const contactButton = document.querySelector(".contact-button a");
 
   links.forEach((link) => {
     link.addEventListener("click", function (event) {
@@ -10,38 +11,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  function addContactButtonEvent() {
+    const contactButton = document.querySelector(".contact-button a");
+    // se o botão de contato existir, adiciona o evento de clique
+    if (contactButton) {
+      contactButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        loadContent("contato");
+      });
+    }
+  }
+
   function loadContent(contentId) {
     const content = {
-      sobre: `<h1>Sobre Mim</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et,
-        voluptate aut odio, dolore ratione cum libero reiciendis error debitis
-        dignissimos sunt quod excepturi amet! Omnis sed odio quisquam tenetur
-        aliquam placeat, voluptatem debitis, molestias, facilis provident
-        recusandae in reprehenderit eveniet quasi iusto voluptate voluptatibus
-        ducimus quod nostrum quae? Aliquid temporibus impedit sapiente, odio
-        maxime odit rerum eligendi debitis voluptatem officia quaerat tempore
-        earum deserunt, ipsa, numquam cumque magni quibusdam magnam nemo
-        expedita explicabo fugiat exercitationem dolore! Dolor quis ut expedita,
-        in possimus accusantium libero eius obcaecati non ipsam odit ducimus.
-        Voluptatem, illo ducimus vitae voluptatibus nesciunt ullam nihil. Sed
-        iure, est recusandae dignissimos quisquam blanditiis rerum voluptatum
-        tenetur aspernatur dolorum voluptatem nesciunt, voluptates dicta nam
-        obcaecati. Corrupti nihil voluptatem consequuntur laboriosam laborum
-        vero, ratione explicabo? Eveniet laudantium, asperiores provident ipsa
-        animi saepe laboriosam iste, eligendi aliquam deserunt quae et omnis,
-        nemo ab. Sit, cumque placeat porro, quisquam error ex velit voluptate,
-        omnis quia veritatis debitis. Ullam quam molestiae aspernatur debitis
-        exercitationem libero nam nesciunt expedita perspiciatis amet mollitia
-        adipisci quod inventore sit iusto corporis quae laborum, id earum nihil
-        aliquam explicabo. Sunt fugit aliquid magni voluptatum ipsam repellendus
-        ut consequatur saepe possimus provident, assumenda molestiae nostrum
-        fuga distinctio sequi velit in modi blanditiis dolor? Ex voluptate
-        cupiditate perferendis fugit praesentium! Beatae totam optio excepturi
-        tempore ipsa asperiores! Aperiam placeat accusamus corporis omnis dolor
-        reiciendis assumenda beatae eligendi itaque, distinctio pariatur quod
-        laboriosam, vel ex? Vitae, numquam atque eius vero modi praesentium
-        reprehenderit, ad nulla nihil natus neque dicta odit eveniet ipsam
-        labore deserunt doloremque error saepe sequi enim, rerum alias
-        perspiciatis aspernatur dolore!</p>`,
+      home: `<div class="home-content">
+        <div class="home-text">
+          <span>Olá,</span>
+          <span>Sou <span class="glitch">Wellington</span></span>
+          <span>Estudante de Análise e Desenvolvimento de Sistemas</span>
+        </div>
+        <div class="contact-button"><a href="#contato">Contato</a></div>
+      </div>`,
+      sobre: `<h1>Sobre Mim</h1><p>Olá! Me chamo Wellington, tenho 25 anos, atualmente morando em São José dos Campos, São Paulo, e cursando Análise e Desenvolvimento de Sistemas na Uninter. Minha vida é uma mistura interessante de tecnologia, arte e entretenimento.</p>
+      <p>Como Hobby, gosto de fazer Arte 3D, principalmente modelagem de cenários estilizados. Também gosto de jogos de tabuleiro e video-game. Meu jogo favorito é Elden Ring. Também adoro filmes, "Interestelar" ocupa um lugar especial em meu coração, sendo meu filme favorito - um filme que combina ciência, filosofia e emoção.</p>
+      <p>Gosto de culinária japonesa, principalmente sushi. Também sou apaixonado por café, e gosto de experimentar diferentes métodos de preparo e grãos.</p>
+      <p>Meu objetivo é me tornar um desenvolvedor e trabalhar em projetos que tenham um impacto positivo na vida das pessoas.</p>`,
       formacao: `<div class="formacao"><h1 id="formacao">Formação</h1>
         <ul class="items-formacao">
           <ul class="item-formacao">
@@ -54,12 +48,49 @@ document.addEventListener("DOMContentLoaded", function () {
             <li>E.E João Cursino - São José dos Campos/SP</li>
             <li>Fevereiro/2014 - Dezembro/2018</li>
           </ul>
+        </ul>
+        <h1>Idiomas</h1>
+        <ul class="item-idiomas">
+          <li>Português - Nativo</li>
+          <li>Inglês - Avançado</li>
         </ul></div>
         `,
-      contato: "<h1>Contact</h1><p>Get in touch with us here.</p>",
+      portfolio: `<h1 id="portfolio">Portfolio</h1>
+      <div>
+        <ul class="project-list">
+          <li>
+            <div class="card-projeto">
+              <a href="https://finance-ai-self.vercel.app/login" target="_blank">
+                <img src="/images/finance-ai.png" alt="" />
+                Finance.AI
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>`,
+      contato: `<h1 id="contato">Contato</h1>
+      <div class="contato-card">
+        <form class="form" action="">
+          <label for="text">Nome: </label>
+          <input type="text" name="name" />
+          <label for="email">E-mail: </label>
+          <input type="email" name="email" />
+          <label for="Mensagem">Mensagem: </label>
+          <textarea
+            name="Mensagem"
+            id="Mensagem"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </form>
+      </div>`,
     };
 
+    // se o conteúdo existir, exibe-o, caso contrário, exibe uma mensagem de erro e o botão de contato
     mainContent.innerHTML =
       content[contentId] || "<h1>404</h1><p>Content not found.</p>";
+    addContactButtonEvent();
   }
+
+  addContactButtonEvent();
 });

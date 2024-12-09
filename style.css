@@ -1,3 +1,5 @@
+@import compass/css3;
+
 :root {
   --primary: #032f30;
   --secondary: #0a7075;
@@ -17,6 +19,7 @@ body {
   font-size: 18px;
   padding: 0;
   margin: 0 auto !important;
+  overflow: hidden;
 }
 
 .navbar {
@@ -41,8 +44,8 @@ a {
   padding: 5px;
 }
 
-a:hover {
-  border-bottom: solid white 4px;
+nav a:hover {
+  border-bottom: solid #eab62c 3px;
 }
 
 p {
@@ -57,31 +60,32 @@ p {
   gap: 14px;
 }
 
-.items-formacao {
-  display: flex;
-  justify-content: center;
-
-  align-items: center;
-  gap: 32px;
-  text-align: justify;
+.item-formacao,
+.item-idiomas {
+  color: var(--primary);
+  list-style: none;
+  background-color: #eab62c; /* Cor de fundo suave */
+  border: 1px solid #ddd; /* Borda leve */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 16px; /* Espaçamento interno */
+  margin-bottom: 16px; /* Espaçamento entre itens */
+  box-shadow:  2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
-.item-formacao {
-  list-style: none;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  text-align: justify;
-  border: solid white 2px;
-  border-radius: 5px;
+.item-formacao li:first-child {
+  font-weight: bold; /* Destaca o primeiro item */
+  font-size: 1.2em; /* Aumenta o tamanho da fonte do primeiro item */
+}
+
+.item-formacao li:last-child {
+  margin-bottom: 0; /* Remove espaçamento do último item */
 }
 
 .contato-card {
-  background-color: var(--secondary);
+  background-color: #eab62c;
+  color: var(--primary);
   padding: 20px;
-  border: solid white 2px;
+  border: solid 2px;
   border-radius: 5px;
 }
 
@@ -89,6 +93,13 @@ form {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+form input,
+form textarea {
+  padding: 5px;
+  border: solid 2px;
+  border-radius: 5px;
 }
 
 .content {
@@ -105,9 +116,78 @@ form {
 
 .home-content {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 36px;
   text-align: center;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 6px;
+  font-size: 36px;
+  text-size-adjust: 100%;
+  font-family: inconsolata, monospace;
+}
+
+.contact-button a {
+  background-color: #eab62c;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--primary);
+}
+
+.contact-button a:hover {
+  background-color: #f2c94c;
+}
+
+.card-projeto a {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  padding-bottom: 10px;
+  gap: 10px;
+  background-color: #f2c94c;
+  color: var(--primary);
+  border: solid #f2c94c 2px;
+  border-radius: 5px;
+}
+
+.card-projeto img {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.project-list {
+  list-style: none;
+}
+
+.glitch {
+  font-size: 64px;
+  animation: glitch 1000ms infinite;
+  transform: translate(-0.025em, -0.0125em);
+}
+
+/* Animations */
+
+@keyframes glitch {
+  0% {
+    color: orange;
+    text-shadow: -0.05em -0.025em 0 #ec2225, 0.025em -0.025em 0 #313f97,
+      -0.05em -0.05em 0 #50c878;
+  }
+
+  99% {
+    color: yellow;
+    text-shadow: 0.025em 0.05em 0 #ec2225, -0.025em 0.05em 0 #313f97,
+      0 -0.05em 0 #50c878;
+  }
 }
