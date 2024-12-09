@@ -1,5 +1,4 @@
-@import compass/css3;
-
+/* define a cor primária e secundária */
 :root {
   --primary: #032f30;
   --secondary: #0a7075;
@@ -9,6 +8,7 @@ html {
   height: 100%;
 }
 
+/* Define estilo da tag body */
 body {
   background: url("/images/gradient_2.jpg");
   background-size: cover;
@@ -69,7 +69,7 @@ p {
   border-radius: 8px; /* Bordas arredondadas */
   padding: 16px; /* Espaçamento interno */
   margin-bottom: 16px; /* Espaçamento entre itens */
-  box-shadow:  2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  box-shadow: 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
 .item-formacao li:first-child {

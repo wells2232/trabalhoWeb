@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // seleciona todos os links do menu de navegação
   const links = document.querySelectorAll("nav a");
+  // seleciona o conteúdo principal
   const mainContent = document.querySelector("main");
-  const contactButton = document.querySelector(".contact-button a");
 
+  // adiciona o evento de clique a todos os links do menu de navegação, que chama a função loadContent passando o ID do conteúdo
   links.forEach((link) => {
     link.addEventListener("click", function (event) {
       event.preventDefault();
@@ -11,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // adiciona o evento de clique ao botão de contato da página inicial
   function addContactButtonEvent() {
     const contactButton = document.querySelector(".contact-button a");
     // se o botão de contato existir, adiciona o evento de clique
@@ -22,7 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // carrega o conteúdo da página com base no ID do conteúdo passado como argumento
   function loadContent(contentId) {
+    // conteúdo das páginas a serem exibidas no conteúdo principal na tag main
     const content = {
       home: `<div class="home-content">
         <div class="home-text">
